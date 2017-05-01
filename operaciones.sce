@@ -61,10 +61,6 @@ endfunction
 
 function [yt]=simultaneo(x,y)
     largo=length(x)+length(y);
-//    for i=1:largo
-//        yt(2*i-1)=x(i);
-//        yt(2*i)=y(i);
-//    end
     yt(1,:)=x;
     for i=1:length(y)
         yt(2,i)=y(i);
@@ -74,6 +70,13 @@ function [yt]=simultaneo(x,y)
     dibujo(yt(1,:),yt(2,:));
 endfunction
 
+function [yt]=mitad(y)
+    for i=1:length(y)/2
+        yt(i)=y(i);
+    end
+    
+    sound(yt,Fs);
+endfunction
 function transformada(y)
     f=fft(y);
 endfunction

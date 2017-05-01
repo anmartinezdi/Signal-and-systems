@@ -1,4 +1,4 @@
-[y,Fs,b]=wavread("anita.wav");
+[y,Fs,b]=wavread("Goodbye.wav");
 y=y(1,:);
 
 [x,Fs,b]=wavread("Hello.wav");
@@ -61,7 +61,12 @@ function dibujo(y,yt)
 endfunction
 
 function simultaneo(x,y)
-    //stamaño=lent
+    stamaño=length(x)+length(y);
+    for i:stamaño
+        yt(2*i-1)=x(i);
+        yt(2*i)=y(i);
+    end
+    sound(yt,Fs);
 endfunction
 function transformada(y)
     f=fft(y);

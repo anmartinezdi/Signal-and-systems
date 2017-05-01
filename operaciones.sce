@@ -24,7 +24,7 @@ function [yt]=inver(y)
     dibujo(y,yt);
 endfunction
 
-function [yt]=doble(y)
+function [yt]=lento(y)
     disp(length(y),"Tamaño")
     for i=1:length(y)
         yt(i*2)=y(i);
@@ -34,7 +34,7 @@ function [yt]=doble(y)
     dibujo(y,yt);
 endfunction
 
-function [yt]=mitad(y)
+function [yt]=rapido(y)
     disp(length(y),"Tamaño")
     for i=1:length(y)/2
         yt(i)=y(i*2);
@@ -60,6 +60,9 @@ function dibujo(y,yt)
     end
 endfunction
 
+function simultaneo(x,y)
+    stamaño=lent
+endfunction
 function transformada(y)
     f=fft(y);
 endfunction

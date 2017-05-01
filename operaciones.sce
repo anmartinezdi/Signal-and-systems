@@ -1,6 +1,5 @@
 [y,Fs,b]=wavread("Goodbye.wav");
 y=y(1,:);
-
 [x,Fs,b]=wavread("Hello.wav");
 x=x(1,:);
 
@@ -60,14 +59,21 @@ function dibujo(y,yt)
     end
 endfunction
 
-function simultaneo(x,y)
-    stamaño=length(x)+length(y);
-    for i:stamaño
-        yt(2*i-1)=x(i);
-        yt(2*i)=y(i);
+function [yt]=simultaneo(x,y)
+    largo=length(x)+length(y);
+//    for i=1:largo
+//        yt(2*i-1)=x(i);
+//        yt(2*i)=y(i);
+//    end
+    yt(1,:)=x;
+    for i=1:length(y)
+        yt(2,i)=y(i);
     end
+    
     sound(yt,Fs);
+    dibujo(yt(1,:),yt(2,:));
 endfunction
+
 function transformada(y)
     f=fft(y);
 endfunction

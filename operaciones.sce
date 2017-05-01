@@ -46,10 +46,10 @@ endfunction
 
 function dibujo(y,yt)
     disp("Dibujando");
-    tf1=size(y);
-    t1=0:1/Fs:(tf1(2)-1)/Fs;
-    tf2=size(yt);
-    t2=0:1/Fs:(tf2(2)-1)/Fs;
+    tf1=length(y);
+    t1=0:1/Fs:(tf1-1)/Fs;
+    tf2=length(yt);
+    t2=0:1/Fs:(tf2-1)/Fs;
     if yt==0 then
         plot2d(t1,y) // first channel
     else
@@ -61,7 +61,7 @@ function dibujo(y,yt)
 endfunction
 
 function simultaneo(x,y)
-    stamaño=lent
+    //stamaño=lent
 endfunction
 function transformada(y)
     f=fft(y);

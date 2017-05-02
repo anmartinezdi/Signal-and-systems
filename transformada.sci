@@ -10,6 +10,7 @@ a=a(1,:);
 function [yt,r]=transformada(y)
     yt=fft(y);
     for i=1:length(y)
+        r(i)=abs(yt(i));     //magnitud
     end
     r=r';
 endfunction

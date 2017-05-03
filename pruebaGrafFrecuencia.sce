@@ -1,4 +1,4 @@
-[y,Fs,b]=wavread('Hello.wav');
+[y,Fs,b]=wavread('PruebaFrec.wav');
 y=y(1,:);
 //Organiza los datos en vector fila. 
 T=1/Fs;                 // Tiempo de muestreo. 
@@ -13,7 +13,7 @@ plot(t,y);
 title('Señal de Voz');
 xlabel('Tiempo (segundos)');
 subplot(2,1,2);
-plot(f,2*abs(Y(1:NFFT/2))) 
+plot(f,abs(Y(1:NFFT/2))) 
 title('Espector de la Señal de Voz');
 xlabel('Frecuencia (Hz)'); 
 ylabel('|Y(f)|'); 

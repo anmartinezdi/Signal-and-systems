@@ -4,7 +4,7 @@ y=y(1,:);
 [x,Fs,b]=wavread("Hello.wav");
 x=x(1,:);
 
-[a,Fs,b]=wavread("adele.wav");
+[a,Fs,b]=wavread("PruebaFrec.wav");
 a=a(1,:);
 
 function [yt,r,p]=transformada(y)
@@ -28,6 +28,7 @@ function plotear(yt,r,p)
     subplot(3,1,3);
     plot2d(p);
     title("Fase");
+
 endfunction
 
 function [gt]=confu(x,y)

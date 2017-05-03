@@ -6,6 +6,15 @@ x=x(1,:);
 [a,Fs,b]=wavread("adele.wav");
 a=a(1,:);
 
+[u,Fs,b]=wavread("UN_Plaza_che.wav");
+u=u(1,:);
+
+[c,Fs,b]=wavread("York_catedral.wav");
+c=c(1,:);
+
+[e,Fs,b]=wavread("estudio_grabacion.wav");
+e=e(1,:);
+
 function origin(y)
     // nombre del archivo como variable
     sound(y,Fs);
@@ -77,6 +86,16 @@ function [yt]=mitad(y)
     
     sound(yt,Fs);
 endfunction
-function transformada(y)
-    f=fft(y);
+
+//Punto 2
+
+function[g]=convolucion(x,y)
+    g = convol(x,y);
+    sound(g,Fs);
+    dibujo(g,0);
 endfunction
+
+//Punto 3
+
+
+

@@ -29,3 +29,34 @@ function plotear(yt,r,p)
     plot2d(p);
     title("Fase");
 endfunction
+
+function [gt]=confu(x,y)
+    g = convol(x,y);
+    gt=fftshift(fft(g));
+endfunction
+
+function respuesta(x,y)
+    Y = confu(x,y);
+    X = fftshift(fft(x));
+    for i=1:length(Y)
+        H(i)= Y(i)/X(i);
+    end
+    //h = fft(H,1);
+    dibujo(H,Y);
+endfunction
+
+function dibujo(y,yt)
+    disp("Dibujando");
+    tf1=length(y);
+    t1=0:1/Fs:(tf1-1)/Fs;
+    tf2=length(yt);
+    t2=0:1/Fs:(tf2-1)/Fs;
+    if yt==0 then
+        plot2d(t1,y) // first channel
+    else
+        subplot(2,1,1)
+        plot2d(t1,y) // first channel 
+        subplot(2,1,2)
+        plot2d(t2,yt)
+    end
+endfunction
